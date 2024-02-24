@@ -7,6 +7,7 @@ while true; do
     contents="$(ls -l)"
     echo "Contents: $contents"
     if [ -z "$contents" ]; then
+        echo "dead"
         exit
     fi
 
