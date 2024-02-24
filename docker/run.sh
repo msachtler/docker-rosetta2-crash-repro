@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 $(dirname $0)/destroy.sh
+base="$(realpath $(dirname $0)/..)"
 
 docker run \
     --platform=linux/amd64 \
-    --volume=/Users/msachtler/dev/docker-repro:/docker-repro/ \
+    --volume="$base:/docker-repro/" \
     --name rosetta-repro \
     -t \
     -d \
